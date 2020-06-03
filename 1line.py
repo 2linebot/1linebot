@@ -16,14 +16,14 @@ api=tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 user=api.me()
 
 search='"Line 1" from:TTCnotices'
-nrTweets=2880
+nrTweets=5
 
 for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
     try:
         print('Alert RTd')
         print(tweet.text)
         tweet.retweet()
-        time.sleep(30)
+        time.sleep(5)
     except tweepy.TweepError as e:
         print(e.reason)
     except StopIteration:

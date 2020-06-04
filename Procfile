@@ -1,1 +1,1 @@
-worker: python 1line.py
+clock: python 1line.py
